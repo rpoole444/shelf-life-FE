@@ -1,11 +1,26 @@
 import React from "react";
-import './BookContainer.css'
+import BookCard from "../BookCard/BookCard";
+import './BookContainer.css';
 
-const BookContainer = (props) => {
-
-    return(
-        <h2>Books, yeah</h2>
+const BookContainer = ({ allBooks }) => {
+    const bookCards = allBooks.map((book) => {
+      return (
+        <BookCard
+          key={book.id}
+          id={book.id}
+          isbn={book.isbn}
+          title={book.title}
+          bookImage={book.book_image}
+          author={book.author}
+          recommendedBy={book.recommendedBy}
+        />
+      )
+    })
+    return (
+      <section className="book-container">
+        {bookCards}
+      </section>
     )
-}
+  }
 
 export default BookContainer;
