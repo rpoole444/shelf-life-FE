@@ -2,7 +2,8 @@ import './App.css'
 import React, { Component } from 'react';
 import Favorites from '../Favorites/Favorites';
 import BookContainer from '../BookContainer/BookContainer';
-import BookDetails from '../BookDetails/BookDetails'
+import BookDetails from '../BookDetails/BookDetails';
+import Nav from'../Nav/Nav'
 import { Route, Switch } from 'react-router-dom';
 
 
@@ -109,7 +110,7 @@ class App extends Component {
     return (
       <>
         <section className='App'>
-          <h1>ShelfLife</h1>
+          <Nav />
           <Switch>
             <Route exact path='/'>
               <BookContainer allBooks={this.state.books}/>
