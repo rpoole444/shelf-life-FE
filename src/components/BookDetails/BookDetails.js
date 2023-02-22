@@ -28,13 +28,13 @@ class BookDetails extends Component {
             <section className="book-details">
                 <img src={book_image}/>
                 <div className="book-details-text-container">
-                    <h2>{title}</h2>
-                    <p>Written by: {author}</p>
-                    <p>{description}</p>
+                    <h2 className="selected-title">{title}</h2>
+                    <p className="selected-author">Written by: {author}</p>
+                    <p className="selected-description">{description}</p>
                     <p>Recommended by: {recommended_by}</p>
                     <div className="button-container">
-                        <button>Add to Favorites</button>
-                        <a href={amazon_link} target="_blank" rel="noopener noreferrer">Buy Book</a>
+                        <button className="favorite-button">Add to Favorites</button>
+                        <a href={amazon_link} className='amazon-store-link' target="_blank" rel="noopener noreferrer">Buy Book</a>
                     </div>
                 </div>
             </section>
