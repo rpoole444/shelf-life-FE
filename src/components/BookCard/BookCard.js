@@ -12,7 +12,7 @@ const BookCard = ({title, author, bookImage, isbn, id, recommendedBy }) => {
             <p className="book-author">{author}</p>
             <p>Recommended By: {recommendedBy}</p>
           </div>
-          <Link key={id} to={'f'} className="learn-more-btn">Learn More</Link>
+          <Link key={id} to={`/${isbn}/`} className="learn-more-btn">Learn More</Link>
         </div>
       </section>
     )

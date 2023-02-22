@@ -1,10 +1,10 @@
 export const apiCalls = {
-    gitAllBooks() {
-        return fetch()
+    getAllBooks() {
+        return fetch('http://localhost:3001/api/v1/books')
             .then(response => response.json())
     },
-    gitSingleBook(isbn){
-        return fetch()
+    getSingleBook(isbn){
+        return fetch(`http://localhost:3001/api/v1/books/${isbn}`)
         .then(response => response.json())
     },
     getAllFavorites(){
@@ -12,7 +12,7 @@ export const apiCalls = {
         .then(response => response.json())
     },
     addBookToFavorites(favoriteBook){
-        return fetch( url, {
+        return fetch('http://localhost:3001/api/vi/favorites', {
             method:'POST',
             body:JSON.stringify(favoriteBook),
             headers:{
@@ -20,9 +20,8 @@ export const apiCalls = {
             }
         }).then(response => response.json())
     },
-    deleteFromFavorites(isbn){
-        return fetch( url, { method: 'DELETE'})
-        .then(response => response.json())
-    }
+    deleteFromFavorites(id) {
+        return fetch(`http://localhost:3001/api/v1/favorites/${id}`, { method: 'DELETE' })
+          .then(response => response.json())
+      } 
 }
-//add update faverite status to change the json.stringafy isFavorited property to true or false
