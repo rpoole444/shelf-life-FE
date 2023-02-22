@@ -6,7 +6,7 @@ export const cleanBookData = (book) => {
       description: book.description,
       amazon_link: book['amazon_link'],
       book_image: book['book_image'],
-      recomended_by: book['recomended_by'],
+      recommended_by: book['recommended_by'],
       author: book.author,
       isFavorited: book.isFavorited
     } 
