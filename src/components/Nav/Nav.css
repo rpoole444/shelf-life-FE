@@ -1,0 +1,18 @@
+.book-icon-container {
+    display: flex;
+    height: 17vh;
+    width: 80vw;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .welcome-box {
+    height: 12vh;
+    width: 30vw;
+    border: 2px solid black;
+    border-radius: 16px;
+  }
+  
+  .book-icon {
+    height: 14vh;
+  }
