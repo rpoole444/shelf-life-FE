@@ -1,47 +1,49 @@
 .book-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 30%));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 30%));
+  grid-auto-rows: minmax(200px, 320px);
+  grid-row-gap: 12%;
+  grid-column-gap: 4.9%;
+  justify-content: center;
+  overflow-y: scroll;
+  height: 75%;
+  width: 97%;
+  padding-bottom: 2.6%;
+  background-color: #fffaf5;
+  border-radius: 12px;
+}
+
+.book-container::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .book-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 84%));
+    grid-auto-rows: minmax(155px, 320px);
+    grid-row-gap: 12%;
+    grid-column-gap: 4.9%;
+    padding-bottom: 7.6%;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 743px) {
+  .book-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 84%));
+    grid-auto-rows: minmax(155px, 320px);
+    grid-row-gap: 12%;
+    grid-column-gap: 4.9%;
+    padding-bottom: 7.6%;
+  }
+}
+
+@media screen and (min-width: 743px) and (max-width: 1023px) {
+  .book-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 47%));
     grid-auto-rows: minmax(200px, 320px);
     grid-row-gap: 12%;
     grid-column-gap: 4.9%;
-    justify-content: center;
-    overflow-y: scroll;
-    height: 75%;
-    width: 100%;
-    padding-bottom: 2.6%;
+    padding-bottom: 3.6%;
+    height: 95%;
   }
-
-  .book-container::-webkit-scrollbar {
-    display: none;
-  }
-  
-  @media screen and (max-width: 500px) {
-    .book-container {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 84%));
-      grid-auto-rows: minmax(155px, 320px);
-      grid-row-gap: 12%;
-      grid-column-gap: 4.9%;
-      padding-bottom: 7.6%;
-    }
-  }
-  
-  @media screen and (min-width: 501px) and (max-width: 743px) {
-    .book-container {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 84%));
-      grid-auto-rows: minmax(155px, 320px);
-      grid-row-gap: 12%;
-      grid-column-gap: 4.9%;
-      padding-bottom: 7.6%;
-    }
-  }
-  
-  @media screen and (min-width: 743px) and (max-width: 1023px) {
-    .book-container {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 47%));
-      grid-auto-rows: minmax(200px, 320px);
-      grid-row-gap: 12%;
-      grid-column-gap: 4.9%;
-      padding-bottom: 3.6%;
-      height: 95%;
-    }
-  }
+}
