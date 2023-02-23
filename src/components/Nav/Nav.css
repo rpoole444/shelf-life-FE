@@ -19,26 +19,34 @@ margin: 0;
 
 .title-container{
 display: flex;
-width: 40vw;
+width: 50vw;
 height: 20vh;
+align-items: center;
 }
 
 .search-container{
 display: flex;
-width: 40vw;
+width: 50vw;
 height: 20vh;
+justify-content: space-evenly;
+align-items: center;
 }
 
 .nav-container{
     height: 20vh;
-    width: 80vw;
+    width: 95vw;
     display: flex;
-
+    justify-content: space-between;
+    align-items: center;
 }
 
 .button-favorites{
-    height: 3vh;
+    height: 4vh;
+    width: 13.5vw;
+    border-radius: 12px;
+    
 }
 .search-input{
     height: 3vh;
+    width: 20vw;
 }
