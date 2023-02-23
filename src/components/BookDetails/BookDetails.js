@@ -26,7 +26,7 @@ class BookDetails extends Component {
         console.log('selectedbookk', this.state.selectedBook)
         return (
             <section className="book-details">
-                <img src={book_image}/>
+                <img className='book-img' src={book_image}/>
                 <div className="book-details-text-container">
                     <h2 className="selected-title">{title}</h2>
                     <p className="selected-author">Written by: {author}</p>
