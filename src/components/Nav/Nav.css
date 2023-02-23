@@ -1,52 +1,50 @@
-
-.homepage-title{
-font-size: 5vw;
-margin: 0;
+.homepage-title {
+  font-size: 5vw;
+  margin: 0;
 }
 
 .book-icon-container {
-    display: flex;
-    height: 17vh;
-    width: 80vw;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  height: 17vh;
+  width: 80vw;
+  justify-content: space-between;
+  align-items: center;
 }
-  
+
 .book-icon {
-    height: 7rem;
-    
+  height: 7rem;
 }
 
-.title-container{
-display: flex;
-width: 50vw;
-height: 20vh;
-align-items: center;
+.title-container {
+  display: flex;
+  width: 50vw;
+  height: 20vh;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.search-container{
-display: flex;
-width: 50vw;
-height: 20vh;
-justify-content: space-evenly;
-align-items: center;
+.search-container {
+  display: flex;
+  width: 50vw;
+  height: 20vh;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.nav-container{
-    height: 20vh;
-    width: 95vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.nav-container {
+  height: 30vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.button-favorites{
-    height: 4vh;
-    width: 13.5vw;
-    border-radius: 12px;
-    
+.button-favorites {
+  height: 4vh;
+  width: 13.5vw;
+  border-radius: 12px;
 }
-.search-input{
-    height: 3vh;
-    width: 20vw;
+.search-input {
+  height: 3vh;
+  width: 20vw;
 }
