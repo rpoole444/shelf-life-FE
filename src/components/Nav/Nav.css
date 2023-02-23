@@ -7,12 +7,14 @@
   }
   
   .welcome-box {
-    height: 12vh;
+    height: auto;
     width: 30vw;
     border: 2px solid black;
     border-radius: 16px;
+    overflow: auto;
+    /* overflow-wrap: break-word; */
   }
   
   .book-icon {
-    height: 14vh;
+    height: 7rem;
   }

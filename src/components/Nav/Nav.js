@@ -6,7 +6,7 @@ const Nav = () => {
     <div>
       <h1>ShelfLife</h1>
       <div className="book-icon-container">
-        <img src="book.png" alt="book" className="book-icon" />
+        <img src="books.png" alt="stacked Books" className="book-icon" />
         <article className="welcome-box">
           <p>
             Welcome to Shelf Life! Take a look at our selection of

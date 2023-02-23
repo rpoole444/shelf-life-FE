@@ -5,13 +5,11 @@
   text-align: center;
   overflow-y: hidden;
   overflow-x: hidden;
-  margin: 3% 3%;
+  margin: 2% 2%;
   background: #71adea;
-  height: 80vh;
+  height: 87vh;
   border-radius: 50px;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-bottom: 3%;
+  padding: 3% 0% 3% 3%;
   box-shadow: 8px 9px 1px #465a62,
               12px 15px 5px #6b8393;
 }
