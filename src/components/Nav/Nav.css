@@ -1,20 +1,44 @@
+
+.homepage-title{
+font-size: 5vw;
+margin: 0;
+}
+
 .book-icon-container {
     display: flex;
     height: 17vh;
     width: 80vw;
     justify-content: space-between;
     align-items: center;
-  }
+}
   
-  .welcome-box {
-    height: auto;
-    width: 30vw;
-    border: 2px solid black;
-    border-radius: 16px;
-    overflow: auto;
-    /* overflow-wrap: break-word; */
-  }
-  
-  .book-icon {
+.book-icon {
     height: 7rem;
-  }
+    
+}
+
+.title-container{
+display: flex;
+width: 40vw;
+height: 20vh;
+}
+
+.search-container{
+display: flex;
+width: 40vw;
+height: 20vh;
+}
+
+.nav-container{
+    height: 20vh;
+    width: 80vw;
+    display: flex;
+
+}
+
+.button-favorites{
+    height: 3vh;
+}
+.search-input{
+    height: 3vh;
+}

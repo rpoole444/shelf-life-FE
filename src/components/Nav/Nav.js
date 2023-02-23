@@ -3,17 +3,14 @@ import './Nav.css';
 
 const Nav = () => {
   return (
-    <div>
-      <h1>ShelfLife</h1>
-      <div className="book-icon-container">
+    <div className='nav-container'>
+      <div className='title-container'> 
         <img src="books.png" alt="stacked Books" className="book-icon" />
-        <article className="welcome-box">
-          <p>
-            Welcome to Shelf Life! Take a look at our selection of
-            recommendation, and click the "Learn More" button to learn more
-            about the book and store your favorites!{" "}
-          </p>
-        </article>
+        <h1 className='homepage-title'>ShelfLife</h1>
+      </div>
+      <div className="search-container">
+        <input className='search-input' placeholder='search'/>
+        <button className='button-favorites'>To Favorites</button>
       </div>
     </div>
   );
