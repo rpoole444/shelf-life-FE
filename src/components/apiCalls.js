@@ -8,7 +8,7 @@ export const apiCalls = {
         .then(response => response.json())
     },
     getAllFavorites(){
-        return fetch()
+        return fetch('http://localhost:3001/api/vi/favorites')
         .then(response => response.json())
     },
     addBookToFavorites(favoriteBook){

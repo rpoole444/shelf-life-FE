@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './Nav.css';
 
 const Nav = () => {
@@ -9,8 +10,9 @@ const Nav = () => {
         <h1 className='homepage-title'>ShelfLife</h1>
       </div>
       <div className="search-container">
-        <input className='search-input' placeholder='search'/>
-        <button className='button-favorites'>To Favorites</button>
+        {/* <input className='search-input' placeholder='search'/>
+        <button className='button-favorites'>To Favorites</button> */}
+        <Link className='favorites-link' to="/favorites">Your Favorites</Link>
       </div>
     </div>
   );

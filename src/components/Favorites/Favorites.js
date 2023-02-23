@@ -1,17 +1,30 @@
 import React, { Component } from "react";
+import BookContainer from "../BookContainer/BookContainer"
+import { apiCalls } from "../apiCalls";
 import './Favorites.css';
+
 
 class Favorites extends Component {
     constructor() {
         super();
         this.state = {
-
+            favorites: [],
+            error: ''
         }
+    }
+
+    componentDidMount = () => {
+        apiCalls.getAllFavorites()
+            .then(booksData => {
+                const cleanedFavorites = booksData.map(book => cleanBookData(book))
+                this.setState({ favorites: cleanedFavorites})
+            })
+            .catch(error => this.setState({ error: error.message}))
     }
 
     render() {
         return (
-            <h2>Favs here</h2>
+            <BookContainer favBooks={this.state.favorites}/>
         )
     }
 }
