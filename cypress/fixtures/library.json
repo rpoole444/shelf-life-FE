@@ -1,0 +1,41 @@
+[
+  {
+  "id": 8,
+  "isbn": "9780385546027",
+  "title": "THE JUDGE'S LIST",
+  "description": "The second book in the Whistler series. Investigator Lacy Stoltz goes after a serial killer and closes in on a sitting judge.",
+  "amazon_link": "https://www.amazon.com/dp/0385546025?tag=NYTBSREV-20",
+  "author": "John Grisham",
+  "recommended_by": "Karrar Qasim",
+  "book_image": "https://storage.googleapis.com/du-prd/books/images/9780385546027.jpg",
+  "created_at": "2023-02-22T03:24:14.973Z",
+  "updated_at": "2023-02-22T03:24:14.973Z",
+  "isFavorited": "false"
+  },
+  {
+  "id": 9,
+  "isbn": "9780316499774",
+  "title": "THE HORSEWOMAN",
+  "description": "As the Paris Olympics draw near, a mother and daughter, who are champion horse riders, compete against each other.",
+  "amazon_link": "https://www.amazon.com/dp/0316499773?tag=NYTBSREV-20",
+  "author": "James Patterson and Mike Lupica",
+  "recommended_by": "Karrar Qasim",
+  "book_image": "https://storage.googleapis.com/du-prd/books/images/9780316499774.jpg",
+  "created_at": "2023-02-22T03:24:14.973Z",
+  "updated_at": "2023-02-22T03:24:14.973Z",
+  "isFavorited": "false"
+  },
+  {
+  "id": 10,
+  "isbn": "9781984818416",
+  "title": "WISH YOU WERE HERE",
+  "description": "Diana O’Toole re-evaluates her seemingly perfect life when a pandemic disrupts her vacation in the Galápagos Islands.",
+  "amazon_link": "https://www.amazon.com/dp/1984818414?tag=NYTBSREV-20",
+  "author": "Jodi Picoult",
+  "recommended_by": "Karrar Qasim",
+  "book_image": "https://storage.googleapis.com/du-prd/books/images/9781984818416.jpg",
+  "created_at": "2023-02-22T03:24:14.973Z",
+  "updated_at": "2023-02-22T03:24:14.973Z",
+  "isFavorited": "false"
+  }
+]
