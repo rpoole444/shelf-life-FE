@@ -5,10 +5,11 @@ class Search extends Component {
     constructor(){
         super()
         this.state={
-            top100: {},
-            recomended: {},
+            top100: [],
+            recomended: [],
             SearchTopValue: '',
-            seaarchRecomendedValue:''
+            searchRecomendedValue:'',
+            filterBooks: []
 
         }
     }
@@ -22,11 +23,37 @@ class Search extends Component {
     }
 
     componentDidMount () {
-        getRecomended()
+        getAllFavorites()
           .then(data => {
             this.setState({ recomended: data })
         })   
     }
+
+    searchTopBar = (event) => {
+        this.setState({SearchTopValue: event.target.value},() => {
+            this.filterBooks(this.state.SearchTopValue)
+          })
+    }
+
+    searchReacomendedBar = (event) => {
+        this.setState({searchRecomendedValue: event.target.value},() => {
+            this.filterBooks(this.state.searchRecomendedValue)
+          })
+    }
+
+    filterbooks = (input) => {
+        const searchedbooks = this.state.top100.filter(book => {
+          if (input) {
+            return (
+              book.title.toLowerCase().includes(input) ||
+              book.title.toUpperCase().includes(input)
+            );
+          } else {
+            return book;
+          }
+        });
+        this.setState({ top100: searchedbooks });
+      };
 
     render(){
         return(
@@ -37,14 +64,16 @@ class Search extends Component {
                         type='text'
                         id='searchTop'
                         placeholder='Enter Title Here'
-
+                        value={this.state.SearchTopValue}
+                        onChange={event => this.state.SearchTopValue(event)}
                     />
                     <lable htmlFor='recomended'>Recomended By</lable>
                     <input
                         type='text'
                         id='recomended'
                         placeholder='Enter Title Here'
-                        // onChange={}
+                        value={this.state.searchRecomendedValue}
+                        onChange={event => this.state.searchRecomendedValue(event)}
                     />
                     <button>Add Book</button>
                 </form>
