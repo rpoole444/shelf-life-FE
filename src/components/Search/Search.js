@@ -11,6 +11,14 @@ class Search extends Component {
     }
 
 
+    componentDidMount () {
+  
+        getAPIData(`movies/${this.props.movieId}`)
+          .then(data => {
+            this.setState({ top100: data })
+        })
+              
+    }
 
     render(){
         return(
