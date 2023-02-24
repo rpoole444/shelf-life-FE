@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { apiCalls } from '../apiCalls';
-import { cleanBookData } from "../utilities";
+import { cleanBookData, trimBookData } from "../utilities";
 import './BookDetails.css'
 
 class BookDetails extends Component {
@@ -13,15 +13,49 @@ class BookDetails extends Component {
     }
 
     componentDidMount = () => {
-        apiCalls.getSingleBook(this.props.id)
+        apiCalls.getSingleBook(this.props.isbn)
             .then(bookData => {
+              console.log(bookData)
                 const cleanedBookData = cleanBookData(bookData[0])
                 this.setState({selectedBook: cleanedBookData })
             })
             .catch(error => this.setState({ error: error.message}))
     }
 
+    handleDelete = () => {
+        Promise.all([apiCalls.deleteFromFavorites(this.state.selectedBook.isbn), apiCalls.updateFavStatus(this.state.selectedBook)])
+        .then(() => {
+          return apiCalls.getSingleBook(this.props.isbn)
+            .then(data => {
+              const cleanedBookData = cleanBookData(data[0])
+              this.setState({ selectedBook: cleanedBookData })
+            })
+        })
+        .catch(error => this.setState({ error: error.message }))
+      }
+    
+      handleAdd = () => {
+        Promise.all([apiCalls.addBookToFavorites(trimBookData(this.state.selectedBook)), apiCalls.updateFavStatus(this.state.selectedBook)])
+        .then(() => {
+          return apiCalls.getSingleBook(this.props.isbn)
+            .then(data => {
+              const cleanedBookData = cleanBookData(data[0])
+              this.setState({ selectedBook: cleanedBookData })
+            })
+        })
+        .catch(error => this.setState({ error: error.message }))
+      }
+
+    determineButton = () => {
+        if(this.state.selectedBook.isFavorited === 'true') {
+          return <button className="unfavorite-button" onClick={this.handleDelete}>Remove from Favorites</button>
+        } else {
+          return <button className="favorite-button" onClick={this.handleAdd}>Add to Favorites</button>
+        }
+      }
+
     render() {
+      console.log(this.state.selectedBook)
         const { id, isbn, title, description, amazon_link, book_image, recommended_by, author } = this.state.selectedBook
         console.log('selectedbookk', this.state.selectedBook)
         return (
@@ -33,7 +67,7 @@ class BookDetails extends Component {
                     <p className="selected-description">{description}</p>
                     <p>Recommended by: {recommended_by}</p>
                     <div className="button-container">
-                        <button className="favorite-button">Add to Favorites</button>
+                        {this.determineButton()}
                         <a href={amazon_link} className='amazon-store-link' target="_blank" rel="noopener noreferrer">Buy Book</a>
                     </div>
                 </div>
