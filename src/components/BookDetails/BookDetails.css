@@ -1,3 +1,48 @@
 .book-img{
     max-height: 40%;
 }
+.button-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+.favorite-button,
+.amazon-store-link {
+    width: 12em;
+    height: 5em;
+    background: none;
+    border-radius: 50px;
+    border: 1px solid #938673;
+    color: #938673;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.unfavorite-button {
+    width: 12em;
+    height: 5em;
+    background: #938673;
+    border-radius: 50px;
+    border: none;
+    color: #fbf3ee;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.amazon-store-link {
+    padding: 1.7em 0 0 0;
+}
+
+.favorite-button,
+.unfavorite-button {
+  margin-right: 8%;
+}

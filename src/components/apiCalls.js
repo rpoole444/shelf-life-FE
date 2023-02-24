@@ -1,15 +1,16 @@
+import { handleResponse } from './utilities'
 export const apiCalls = {
     getAllBooks() {
         return fetch('http://localhost:3001/api/v1/books')
-            .then(response => response.json())
+            .then(response => handleResponse(response))
     },
     getSingleBook(isbn){
         return fetch(`http://localhost:3001/api/v1/books/${isbn}`)
-        .then(response => response.json())
+            .then(response => handleResponse(response))
     },
     getAllFavorites(){
         return fetch('http://localhost:3001/api/vi/favorites')
-        .then(response => response.json())
+            .then(response => handleResponse(response))
     },
     addBookToFavorites(favoriteBook){
         return fetch('http://localhost:3001/api/vi/favorites', {
@@ -18,10 +19,21 @@ export const apiCalls = {
             headers:{
                 'Content-Type': 'aplication/json'
             }
-        }).then(response => response.json())
+        })
+            .then(response => handleResponse(response))
     },
     deleteFromFavorites(id) {
         return fetch(`http://localhost:3001/api/v1/favorites/${id}`, { method: 'DELETE' })
-          .then(response => response.json())
-      } 
+            .then(response => handleResponse(response))
+      },
+    updateFavStatus(selectedBook) {
+        return fetch(`http://localhost:3001/api/v1/books/${selectedBook.isbn}`, {
+          method: 'PATCH',
+          body: JSON.stringify({isFavorited: !(selectedBook.isFavorited === 'true')}),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+            .then(response => handleResponse(response))
+    }
 }

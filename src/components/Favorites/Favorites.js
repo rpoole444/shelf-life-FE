@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BookContainer from "../BookContainer/BookContainer"
 import { apiCalls } from "../apiCalls";
+import { cleanBookData } from '../utilities'
 import './Favorites.css';
 
 
