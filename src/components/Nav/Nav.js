@@ -15,6 +15,7 @@ const Nav = ({ location }) => {
       <Link className="logo-link" to="/">
         <img className="logo" src={logo} alt="Book club logo"/>
       </Link>
+      <h1 className='title'>Shelf Life</h1>
       {navLink}
     </nav>
   );

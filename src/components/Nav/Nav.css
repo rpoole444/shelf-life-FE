@@ -45,3 +45,7 @@
     align-self: flex-end;
   }
 }
+
+.title{
+  font-size: 6rem;
+}
