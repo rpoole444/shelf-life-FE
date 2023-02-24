@@ -13,8 +13,9 @@ class BookDetails extends Component {
     }
 
     componentDidMount = () => {
-        apiCalls.getSingleBook(this.props.id)
+        apiCalls.getSingleBook(this.props.isbn)
             .then(bookData => {
+              console.log(bookData)
                 const cleanedBookData = cleanBookData(bookData[0])
                 this.setState({selectedBook: cleanedBookData })
             })
@@ -34,7 +35,7 @@ class BookDetails extends Component {
       }
     
       handleAdd = () => {
-        Promise.all([apiCalls.addToFavorites(trimBookData(this.state.selectedBook)), apiCalls.updateFavStatus(this.state.selectedBook)])
+        Promise.all([apiCalls.addBookToFavorites(trimBookData(this.state.selectedBook)), apiCalls.updateFavStatus(this.state.selectedBook)])
         .then(() => {
           return apiCalls.getSingleBook(this.props.isbn)
             .then(data => {
@@ -54,6 +55,7 @@ class BookDetails extends Component {
       }
 
     render() {
+      console.log(this.state.selectedBook)
         const { id, isbn, title, description, amazon_link, book_image, recommended_by, author } = this.state.selectedBook
         console.log('selectedbookk', this.state.selectedBook)
         return (

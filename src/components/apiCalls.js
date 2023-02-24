@@ -9,15 +9,15 @@ export const apiCalls = {
             .then(response => handleResponse(response))
     },
     getAllFavorites(){
-        return fetch('http://localhost:3001/api/vi/favorites')
+        return fetch('http://localhost:3001/api/v1/favorites')
             .then(response => handleResponse(response))
     },
     addBookToFavorites(favoriteBook){
-        return fetch('http://localhost:3001/api/vi/favorites', {
+        return fetch('http://localhost:3001/api/v1/favorites', {
             method:'POST',
             body:JSON.stringify(favoriteBook),
             headers:{
-                'Content-Type': 'aplication/json'
+                'Content-Type': 'application/json'
             }
         })
             .then(response => handleResponse(response))
