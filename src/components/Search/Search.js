@@ -23,11 +23,12 @@ class Search extends Component {
                         placeholder='Enter Title Here'
 
                     />
-                    <lable htmlFor='recomended'>Recomended</lable>
+                    <lable htmlFor='recomended'>Recomended By</lable>
                     <input
                         type='text'
                         id='recomended'
                         placeholder='Enter Title Here'
+                        // onChange={}
                     />
                     <button>Add Book</button>
                 </form>
