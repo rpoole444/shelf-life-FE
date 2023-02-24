@@ -15,9 +15,13 @@ const BookContainer = ({ allBooks }) => {
         author={book.author}
         recommendedBy={book.recommended_by}
       />
-    );
-  });
-  return <section className="book-container">{bookCards}</section>;
+    )
+  })
+  return (
+    <section className="book-container">
+    {bookCards}
+    </section>
+  )
 };
 
 export default BookContainer;

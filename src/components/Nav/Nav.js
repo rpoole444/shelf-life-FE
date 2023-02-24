@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './Nav.css';
+import logo from '../books.png'
 
-const Nav = () => {
+const Nav = ({ location }) => {
+  let navLink;
+  if (location === 'favorites') {
+    navLink = <Link className="landing-page-link" to="/"><h1>Return Home »</h1></Link>
+  } else {
+    navLink = <Link className="favorites-link" to="/favorites"><h1>Your Favorites »</h1></Link>
+  }
   return (
-    <div className='nav-container'>
-      <div className='title-container'> 
-        <img src="books.png" alt="stacked Books" className="book-icon" />
-        <h1 className='homepage-title'>ShelfLife</h1>
-      </div>
-      <div className="search-container">
-        {/* <input className='search-input' placeholder='search'/>
-        <button className='button-favorites'>To Favorites</button> */}
-        <Link className='favorites-link' to="/favorites">Your Favorites</Link>
-      </div>
-    </div>
+    <nav className="navbar">
+      <Link className="logo-link" to="/">
+        <img className="logo" src={logo} alt="Book club logo"/>
+      </Link>
+      {navLink}
+    </nav>
   );
   
     
