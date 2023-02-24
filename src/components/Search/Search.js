@@ -5,19 +5,27 @@ class Search extends Component {
     constructor(){
         super()
         this.state={
-            top100: '',
-            recomended: ''
+            top100: {},
+            recomended: {},
+            SearchTopValue: '',
+            seaarchRecomendedValue:''
+
         }
     }
 
 
     componentDidMount () {
-  
-        getAPIData(`movies/${this.props.movieId}`)
+        getTop100()
           .then(data => {
             this.setState({ top100: data })
-        })
-              
+        })   
+    }
+
+    componentDidMount () {
+        getRecomended()
+          .then(data => {
+            this.setState({ recomended: data })
+        })   
     }
 
     render(){
