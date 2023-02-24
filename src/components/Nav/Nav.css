@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 30%;
+  height: 18%;
   width: 100%;
 }
 
 .favorites-link,
 .landing-page-link {
-  font-family: 'Yeseva One', cursive;
+  font-family: 'Yeseva One';
   text-decoration: none;
   color: black;
   font-size: xx-large;
@@ -21,9 +21,13 @@
 }
 
 .logo {
-  width: 100%;
+  width: 10vw;
 }
 
+.title{
+  font-size: 5em;
+  color: rgb(3, 13, 29);
+}
 @media screen and (max-width: 744px) {
   .navbar {
     display: flex;
