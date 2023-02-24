@@ -2,9 +2,10 @@ import React from "react";
 import BookCard from "../BookCard/BookCard";
 import "./BookContainer.css";
 
+// test me
 const BookContainer = ({ allBooks }) => {
   const bookCards = allBooks.map((book) => {
-    console.log(book.recommended_by);
+    // Remove console.log
     return (
       <BookCard
         key={book.id}
@@ -16,10 +17,11 @@ const BookContainer = ({ allBooks }) => {
         recommendedBy={book.recommended_by}
       />
     )
-  })
+  });
+
   return (
     <section className="book-container">
-    {bookCards}
+      {bookCards}
     </section>
   )
 };

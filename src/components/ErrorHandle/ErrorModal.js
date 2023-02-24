@@ -1,6 +1,6 @@
+// file was named model, but this is a modal!
 import React from 'react';
-import './ErrorModel.css'
-
+import './ErrorModal.css'
 
 const ErrorModal = (props) => {
   return (

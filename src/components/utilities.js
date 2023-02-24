@@ -1,3 +1,4 @@
+// fix indentation
 export const cleanBookData = (book) => {
     return  {
       id: book.id,
@@ -9,7 +10,7 @@ export const cleanBookData = (book) => {
       recommended_by: book['recommended_by'],
       author: book.author,
       isFavorited: book.isFavorited
-    } 
+    }
   }
 
   export const trimBookData = (book) => {
@@ -31,4 +32,3 @@ export const cleanBookData = (book) => {
       throw new Error('Sorry, an error has occurred! Please try again later.')
     }
   }
-  

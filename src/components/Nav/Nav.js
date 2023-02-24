@@ -20,6 +20,5 @@ const Nav = ({ location }) => {
     </nav>
   );
 }
-  
 
 export default Nav;

@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./BookCard.css";
 
-const BookCard = ({ title, author, bookImage, isbn, id, recommendedBy }) => {
+// id is unused in this method signature
+// needs to be tested :)
+const BookCard = ({ title, author, bookImage, isbn, recommendedBy }) => {
   return (
     <section className="book-card">
       <img className="book-cover" src={bookImage} alt={`${title} cover`} />
