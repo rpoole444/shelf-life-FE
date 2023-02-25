@@ -12,6 +12,10 @@ export const apiCalls = {
         return fetch('http://localhost:3001/api/v1/favorites')
             .then(response => handleResponse(response))
     },
+    getTop100(){
+        return fetch('http://localhost:3001/api/v1/top100')
+            .then(response => handleResponse(response))
+    },
     addBookToFavorites(favoriteBook){
         return fetch('http://localhost:3001/api/v1/favorites', {
             method:'POST',
