@@ -6,9 +6,7 @@ class Search extends Component {
         super()
         this.state={
             top100: [],
-            recomended: [],
             SearchTopValue: '',
-            searchRecomendedValue:'',
             filterBooks: []
 
         }
@@ -22,12 +20,6 @@ class Search extends Component {
         })   
     }
 
-    componentDidMount () {
-        getAllFavorites()
-          .then(data => {
-            this.setState({ recomended: data })
-        })   
-    }
 
     searchTopBar = (event) => {
         this.setState({SearchTopValue: event.target.value},() => {
@@ -35,19 +27,12 @@ class Search extends Component {
           })
     }
 
-    searchReacomendedBar = (event) => {
-        this.setState({searchRecomendedValue: event.target.value},() => {
-            this.filterBooks(this.state.searchRecomendedValue)
-          })
-    }
 
     filterbooks = (input) => {
         const searchedbooks = this.state.top100.filter(book => {
           if (input) {
             return (
-              book.title.toLowerCase().includes(input) ||
-              book.title.toUpperCase().includes(input)
-            );
+              book.title.toUperCase().includes(input));
           } else {
             return book;
           }
