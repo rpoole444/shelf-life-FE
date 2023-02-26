@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { apiCalls } from '../apiCalls';
 import { cleanBookData, trimBookData } from "../utilities";
+import Error404 from '../ErrorHandle/Error404'
+import ErrorModal from '../ErrorHandle/ErrorModel'
 import './BookDetails.css'
 
 class BookDetails extends Component {
@@ -55,9 +57,8 @@ class BookDetails extends Component {
       }
 
     render() {
-      console.log(this.state.selectedBook)
         const { id, isbn, title, description, amazon_link, book_image, recommended_by, author } = this.state.selectedBook
-        console.log('selectedbookk', this.state.selectedBook)
+        const errorModal = this.state.error ? <ErrorModal message={this.state.error}/> : null
         return (
             <section className="book-details">
                 <img className='book-img' src={book_image}/>
@@ -71,6 +72,7 @@ class BookDetails extends Component {
                         <a href={amazon_link} className='amazon-store-link' target="_blank" rel="noopener noreferrer">Buy Book</a>
                     </div>
                 </div>
+                {errorModal}
             </section>
         )
     }
