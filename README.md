@@ -54,12 +54,10 @@ This project is designed to allow users to learn more about popular books that h
 - Create a multi-page UX using Router
 
 ## Preview 
-![mainPage]()
-![BookDeets]()
-![Favorites]()
-![errorPage]()
-![Screen Shot 2023-02-13 at 11 56 47 AM]()
-
+![mainPage](public/ScreenshotMainPage.png)
+![BookDeets](public/ScreenshotBookDetails.png)
+![Favorites](public/ScreenshotFavorites.png)
+![errorPage](public/ScreenshotErrorPage.png)
 
 ## Wins & Challenges
 
