@@ -16,6 +16,7 @@ const BookContainer = ({ allBooks }) => {
       />
     );
   });
+
   return <section className="book-container">{bookCards}</section>;
 };
 
