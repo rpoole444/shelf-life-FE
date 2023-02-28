@@ -24,16 +24,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 4. Go to http://localhost:3000/ and you should see the website
 5. Enter `control + c` in your terminal to stop the server at any time.
 
-
-## Setup
-
-- Clone down this repo [here](https://github.com/rpoole444/shelf-life-FE)
-- On the command line, type: $ npm intall
-- On the command line, type: $ npm start
-- Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-- The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
 ## Technologies
   - Javascript
   - CSS / HTML
