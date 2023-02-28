@@ -16,6 +16,15 @@ Deployed Application here: [Shelf Life](https://shelf-life-fe.vercel.app/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Installation Instructions <a name="installationInstructions"></a>
+
+1. Clone down [this repository](https://github.com/rpoole444/shelf-life-FE)
+2. Run `npm install`
+3. Run `npm start` in your terminal
+4. Go to http://localhost:3000/ and you should see the website
+5. Enter `control + c` in your terminal to stop the server at any time.
+
+
 ## Setup
 
 - Clone down this repo [here](https://github.com/rpoole444/shelf-life-FE)
