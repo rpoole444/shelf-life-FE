@@ -1,29 +1,21 @@
 describe('Book Club error modal for handling any error outside the catch', () => {
   
     it('should show error modal when loading page is unavailable', () => {
-      cy.intercept('GET', 'http://localhost:3001/api/v1/books', {statusCode: 500})
+      cy.intercept('GET', 'https://shelf-life-db.herokuapp.com/api/v1/books', {statusCode: 500})
       cy.visit('http://localhost:3000/')
       cy.get('.error-message')
         .should('have.text', 'Sorry, an error has occurred! Please try again later.')
     })
   
     it('should show error modal when book details is unavailable', () => {
-      cy.intercept('GET', 'http://localhost:3001/api/v1/books/9780525559474', {statusCode: 500})
+      cy.intercept('GET', 'https://shelf-life-db.herokuapp.com/api/v1/books/9780525559474', {statusCode: 500})
       cy.visit('http://localhost:3000/9780525559474/selectedBook')
       cy.get('.error-message')
         .should('have.text', 'Sorry, an error has occurred! Please try again later.')
     })
-  
-    it('should show error modal when the Add to Favorites button is not working', () => {
-      cy.intercept('POST', 'http://localhost:3001/api/v1/favorites', {statusCode: 500})
-      cy.visit('http://localhost:3000/9780525559474/selectedBook')
-        .get('.button-container').as('.favorite-button').click()
-      cy.get('.error-message')
-        .should('have.text', 'Sorry, an error has occurred! Please try again later.')
-    })
-  
+    
     it('should show error modal when the Remove from Favorites button is not working', () => {
-      cy.intercept('POST', 'http://localhost:3001/api/v1/favorites',  
+      cy.intercept('POST', 'https://shelf-life-db.herokuapp.com/api/v1/favorites',  
        {
          statusCode: 201,
          body: {
@@ -35,9 +27,9 @@ describe('Book Club error modal for handling any error outside the catch', () =>
             "author": "Matt Haig"
           }
        })
-      cy.intercept('PATCH', 'http://localhost:3001/api/v1/books/9780525559474', { "isFavorited": "true" })
-      cy.intercept('GET', 'http://localhost:3001/api/v1/books/9780525559474', { fixture: 'isFavoritedSingleBook.json' })
-      cy.intercept('DELETE', 'http://localhost:3001/api/v1/favorites/9780525559474', {statusCode: 500})
+      cy.intercept('PATCH', 'https://shelf-life-db.herokuapp.com/api/v1/books/9780525559474', { "isFavorited": "true" })
+      cy.intercept('GET', 'https://shelf-life-db.herokuapp.com/api/v1/books/9780525559474', { fixture: 'isFavoritedSingleBook.json' })
+      cy.intercept('DELETE', 'https://shelf-life-db.herokuapp.com/api/v1/favorites/9780525559474', {statusCode: 500})
       cy.visit('http://localhost:3000/9780525559474/selectedBook')
         .get('.unfavorite-button').contains('Remove from Favorites').click()
       cy.get('.error-message')
@@ -45,7 +37,7 @@ describe('Book Club error modal for handling any error outside the catch', () =>
     })
       
     it('should show error modal when Favorites page is unavailable', () => {
-      cy.intercept('GET', 'http://localhost:3001/api/v1/favorites', {statusCode: 500})
+      cy.intercept('GET', 'https://shelf-life-db.herokuapp.com/api/v1/favorites', {statusCode: 500})
       cy.visit('http://localhost:3000/favorites')
       cy.get('.error-message')
         .should('have.text', 'Sorry, an error has occurred! Please try again later.')

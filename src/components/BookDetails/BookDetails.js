@@ -2,10 +2,7 @@ import React, { Component } from "react";
 import ErrorModal from "../ErrorHandle/ErrorModel";
 import { apiCalls } from "../apiCalls";
 import { cleanBookData, trimBookData } from "../utilities";
-import Error404 from '../ErrorHandle/Error404'
-import ErrorModal from '../ErrorHandle/ErrorModel'
-import './BookDetails.css'
-import PropTypes from 'prop-types';
+import "./BookDetails.css";
 
 class BookDetails extends Component {
   constructor(props) {
@@ -71,30 +68,32 @@ class BookDetails extends Component {
   };
 
   render() {
-    const {title, description, amazon_link, book_image, recommended_by, author} = this.state.selectedBook;
+    const {title, description, amazon_link, book_image, recommended_by,author
+} = this.state.selectedBook;
     const errorModal = this.state.error ? <ErrorModal message={this.state.error}/> : null
     return (
       <section className="book-details">
         <img className="book-img" src={book_image} alt="book" />
-          <div className="book-details-text-container">
-            <div className="book-text-div">
-            <h2 className="selected-title">{title}</h2>
-            <p className="selected-author">Written by: {author}</p>
-            <p className="selected-description">{description}</p>
-            <p className="selected-recommender">Recommended by: {recommended_by}</p>
-          </div>
+        <div className="book-details-text-container">
+          <h2 className="selected-title">{title}</h2>
+          <p className="selected-author">Written by: {author}</p>
+          <p className="selected-description">{description}</p>
+          <p>Recommended by: {recommended_by}</p>
           <div className="button-container">
             {this.determineButton()}
-            <a href={amazon_link} className="amazon-store-link" target="_blank" rel="noopener noreferrer">Buy Book</a>
+            <a
+              href={amazon_link}
+              className="amazon-store-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Buy Book
+            </a>
           </div>
         </div>
         {errorModal}
       </section>
-    )
+    );
   }
-};
-export default BookDetails;
-
-BookDetails.propTypes = {
-  isbn: PropTypes.string
 }
+export default BookDetails;

@@ -13,9 +13,10 @@ const Nav = ({ location }) => {
   return (
     <nav className="navbar">
       <Link className="logo-link" to="/">
-        <img className="logo" src={logo} alt="Book club logo"/>
+        <img className="logo" src={logo} alt="Shelf Life logo"/>
       </Link>
         <h1 className='title'>Shelf Life</h1>
+        
       {navLink}
     </nav>
   );
