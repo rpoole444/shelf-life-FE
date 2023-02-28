@@ -1,94 +1,46 @@
-describe('single book view', () => {
-    beforeEach(() => {
-      cy.intercept('GET','http://localhost:3001/api/v1/selectedBook', {fixture: "singleBook.json"})
-      cy.visit('http://localhost:3000/')
+describe('Book Club book details page user flow', () => {
+
+    it('should display all book details for a single book', () => {
+      cy.intercept('https://shelf-life-db.herokuapp.com/api/v1/books/9780525559474', { fixture: 'singleBook.json' })
+      cy.visit('http://localhost:3000/9780525559474/selectedBook')
+        .get('.selected-cover').should('have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9780525559474.jpg')
+        .get('.selected-title').contains('THE MIDNIGHT LIBRARY')
+        .get('.selected-author').contains('Matt Haig')
+        .get('.selected-description').contains('Nora Seed finds a library beyond the edge of the universe that contains books with multiple possibilities of the lives one could have lived.')
+        .get('.amazon-store-link').should('have.attr', 'href', 'https://www.amazon.com/dp/0525559477?tag=NYTBSREV-20' )
     })
-
-
-    it('should have a title', () => {
-        cy.contains("Shelf Life")
+  
+    it('should allow a user to add book to favorites', () => {
+      cy.intercept('GET', 'https://shelf-life-db.herokuapp.com/api/v1/books/9780525559474', { fixture: 'singleBook.json' })
+      cy.intercept('POST', 'https://shelf-life-db.herokuapp.com/api/v1/favorites',  
+       {
+         statusCode: 201,
+         body: {
+            "isbn": "9780525559474",
+            "title": "The Midnight Library",
+            "description": "Nora Seed finds a library beyond the edge of the universe that contains books with multiple possibilities of the lives one could have lived.",
+            "amazon_link": "https://www.amazon.com/dp/0525559477?tag=NYTBSREV-20",
+            "book_image": "https://storage.googleapis.com/du-prd/books/images/9780525559474.jpg",
+            "author": "Matt Haig"
+          }
+       })
+      cy.intercept('PATCH', 'https://shelf-life-db.herokuapp.com/api/v1/books/9780525559474', { "isFavorited": "true" })
+      cy.intercept('GET', 'https://shelf-life-db.herokuapp.com/api/v1/books/9780525559474', { fixture: 'isFavoritedSingleBook.json' })
+      cy.intercept('GET', 'https://shelf-life-db.herokuapp.com/api/v1/favorites', { fixture: 'singleFavoritedBook.json' })
+      cy.visit('http://localhost:3000/9780525559474/selectedBook')
+        .get('.button-container').as('.favorite-button').click()
+        .get('.unfavorite-button').contains('Remove from Favorites')
+        .get('.favorites-link').click()
+      cy.location().should((loc) => {
+        expect(loc.href).to.eq('http://localhost:3000/favorites')
+      })
+        .get('.book-card').contains('THE MIDNIGHT LIBRARY')
+        .get('.book-card').contains('Matt Haig')
+        .get('.book-cover').should('have.attr', 'src', 'https://storage.googleapis.com/du-prd/books/images/9780525559474.jpg')
+        .get('.learn-more-btn').contains('Learn More').click()
+        .get('.unfavorite-button').contains('Remove from Favorites')
     })
-
-    it('should show book and all book details',() => {
-        cy.contains("THE JUDGE'S LIST")
-        cy.contains("John Grisham")
-        cy.contains("Recommended By: Karrar Qasim")
-
-        cy.contains("THE HORSEWOMAN")
-        cy.contains("James Patterson and Mike Lupica")
-        cy.contains("Recommended By: Karrar Qasim")
-
-        cy.contains("WISH YOU WERE HERE")
-        cy.contains("Jodi Picoult")
-        cy.contains("Recommended By: Karrar Qasim")
-    })
-
-    it('Should be able to click Your Favorites and visit the favorites page', () => {
-        cy.intercept({
-            method:'POST',
-            url:'http://localhost:3001/api/v1/favorites'
-         },
-         {
-            statusCode:201,
-            body:{
-                id: 8,
-                isbn: "9780385546027",
-                title: "THE JUDGE'S LIST",
-                description: "The second book in the Whistler series. Investigator Lacy Stoltz goes after a serial killer and closes in on a sitting judge.",
-                amazon_link: "https://www.amazon.com/dp/0385546025?tag=NYTBSREV-20",
-                author: "John Grisham",
-                recommended_by: "Karrar Qasim",
-                
-            }
-        })  
-        
-        cy.get(".favorites-link").click()
-        cy.url("http://localhost:3000/").should('include',"favorites")
-    })
-
-    it('should allow a user to return to home page', () => {
-        cy.intercept('http://localhost:3001/api/v1/selectedBook', { selectedBook: 'singleBook.json' })
-        cy.visit('http://localhost:3000/selectedBook')
-          .get(".logo").should('have.attr', 'alt', 'Book club logo').click()
-        cy.location().should((location) => {
-          expect(location.href).to.eq('http://localhost:3000/')
-        })
-    })
-
-    it('Should be able to click Your Favorit button and add a book to favorites', () => {  
-        cy.intercept('POST', 'http://localhost:3001/api/v1/favorites', { "isFavorited": "true" },
-        {
-            statusCode:201,
-            body:{
-                "isbn": "9780525559474",
-                "title": "THE MIDNIGHT LIBRARY",
-                "description":
-                "Nora Seed finds a library beyond the edge of the universe that contains books with multiple possibilities of the lives one could have lived.",
-                "amazon_link": "https://www.amazon.com/dp/0525559477?tag=NYTBSREV-20",
-                "author": "Matt Haig",
-                "recommended_by": "Karrar Qasim",
-                "book_image":
-                "https://storage.googleapis.com/du-prd/books/images/9780525559474.jpg",
-                "isFavorited": "true"
-                        
-            }
-        })  
     
-    cy.get(".favorite-button").click()
-    
-})
-
-    // it('Should be able to click Add to Favorites and add book to favorites page', () => {
-    //     cy.intercept('patch','http://localhost:3001/api/v1/selctedBook') 
-    //     cy.visit('http://localhost:3000/selectedBook') 
-    //     cy.get(".favorite-button").click()
-    
-        
-
-    // })
-
-    
-
-})
+  })
 
 

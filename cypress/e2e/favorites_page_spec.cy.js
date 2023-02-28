@@ -1,9 +1,9 @@
 describe('Book Club favorites page user flow', () => {
 
     it('should display favorited book cards', () => {
-      cy.intercept('http://localhost:3001/api/v1/favorites', { fixture:'favoritedBooks.json' })
+      cy.intercept('https://shelf-life-db.herokuapp.com/api/v1/favorites', { fixture:'favoritedBooks.json' })
       cy.visit('http://localhost:3000/favorites')
-        .get(".logo").should('have.attr', 'alt', 'Book club logo')
+        .get(".logo").should('have.attr', 'alt', 'Shelf Life logo')
         .get('.landing-page-link').contains('Return Home »')
         .get('.book-card').should('have.length', 2)
         .get('.book-card').contains('THE MIDNIGHT LIBRARY')
@@ -17,18 +17,18 @@ describe('Book Club favorites page user flow', () => {
       })
   
     it('should display a message to user when there are no books favorited', () => {
-      cy.intercept('http://localhost:3001/api/v1/favorites', { favorites: [] })
+      cy.intercept('https://shelf-life-db.herokuapp.com/api/v1/favorites', { favorites: [] })
       cy.visit('http://localhost:3000/favorites')
-        .get(".logo").should('have.attr', 'alt', 'Book club logo')
+        .get(".logo").should('have.attr', 'alt', 'Shelf Life logo')
         .get('.landing-page-link').contains('Return Home »')
         .get('.book-card').should('have.length', 0)
         .get('.empty-favorites-msg').contains('You haven\'t added any favorites yet -- get to it!')
     })
   
     it('should allow a user to return to landing page', () => {
-      cy.intercept('http://localhost:3001/api/v1/favorites', { favorites: 'favoritedBooks.json' })
+      cy.intercept('https://shelf-life-db.herokuapp.com/api/v1/favorites', { favorites: 'favoritedBooks.json' })
       cy.visit('http://localhost:3000/favorites')
-        .get(".logo").should('have.attr', 'alt', 'Book club logo').click()
+        .get(".logo").should('have.attr', 'alt', 'Shelf Life logo').click({force: true})
       cy.location().should((loc) => {
         expect(loc.href).to.eq('http://localhost:3000/')
       })
