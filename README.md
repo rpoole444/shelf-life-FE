@@ -2,6 +2,8 @@
 
 Do you have a hard time picking out the right book to read?  Well look no further, Shelf Life is here to help! This App is a book recomendation app where you are able to look at a database of books referred by the Creators and add the book to your favorites based on your interest and the recomendation!  Further more, you are able to search the New York Times top 100 best sellers and add your recommendation to the recommendation database.
 
+Deployed Application here: [Shelf Life](https://shelf-life-fe.vercel.app/)
+
 ## Table of Contents
   - [Setup](#setup)
   - [Technologies](#technologies)
