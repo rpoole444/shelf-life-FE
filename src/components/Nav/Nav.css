@@ -11,7 +11,7 @@
   font-family: 'Yeseva One';
   text-decoration: none;
   color: black;
-  font-size: xx-large;
+  font-size: x-large;
 }
 
 .logo-link {
@@ -21,12 +21,14 @@
 }
 
 .logo {
-  width: 10vw;
+  width: 70%;
 }
 
 .title{
-  font-size: 5em;
-  color: rgb(3, 13, 29);
+  font-family: 'Yeseva One';
+  text-decoration: none;
+  color: black;
+  font-size: xxx-large
 }
 @media screen and (max-width: 744px) {
   .navbar {

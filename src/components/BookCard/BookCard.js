@@ -10,9 +10,9 @@ const BookCard = ({ title, author, bookImage, isbn, id, recommendedBy }) => {
         <div className="book-side-panel-banner">
           <h2 className="book-title">{title}</h2>
           <p className="book-author">{author}</p>
-          <p>Recommended By: {recommendedBy}</p>
+          <p className="book-recommender">Recommended By: {recommendedBy}</p>
         </div>
-        <Link to={`/${isbn}/selectedBook`} className="learn-more-btn">Learn More</Link>
+        <Link key={id} to={`/${isbn}/selectedBook`} className="learn-more-btn">Learn More</Link>
       </div>
     </section>
   );
