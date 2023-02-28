@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 import "./BookCard.css";
 
 const BookCard = ({ title, author, bookImage, isbn, id, recommendedBy }) => {
@@ -19,3 +20,12 @@ const BookCard = ({ title, author, bookImage, isbn, id, recommendedBy }) => {
 };
 
 export default BookCard;
+
+BookCard.propTypes = {
+  title: PropTypes.string,
+  author: PropTypes.string, 
+  bookImage: PropTypes.string,
+  isbn: PropTypes.string, 
+  id: PropTypes.number,
+  recommendedBy: PropTypes.string
+}
