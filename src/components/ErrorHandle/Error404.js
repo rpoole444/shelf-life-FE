@@ -1,5 +1,5 @@
-import React from 'react';
-import './Error404'
+import React from "react";
+import "./Error404.css";
 
 const Error404 = () => {
   return (
@@ -8,6 +8,6 @@ const Error404 = () => {
       <p className="message">We are so sorry, but this page does not exist</p>
     </div>
   );
-}
+};
 
 export default Error404;
