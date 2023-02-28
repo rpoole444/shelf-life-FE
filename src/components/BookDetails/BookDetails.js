@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import ErrorModal from "../ErrorHandle/ErrorModel";
 import { apiCalls } from "../apiCalls";
 import { cleanBookData, trimBookData } from "../utilities";
+import Error404 from '../ErrorHandle/Error404'
+import ErrorModal from '../ErrorHandle/ErrorModel'
+import './BookDetails.css'
 import PropTypes from 'prop-types';
-import "./BookDetails.css";
 
 class BookDetails extends Component {
   constructor(props) {
