@@ -73,12 +73,14 @@ class BookDetails extends Component {
     const errorModal = this.state.error ? <ErrorModal message={this.state.error}/> : null
     return (
       <section className="book-details">
-        <img className="book-img" src={book_image} alt="book" />
+        <img className="selected-cover" src={book_image} alt="book" />
         <div className="book-details-text-container">
-          <h2 className="selected-title">{title}</h2>
-          <p className="selected-author">Written by: {author}</p>
-          <p className="selected-description">{description}</p>
-          <p>Recommended by: {recommended_by}</p>
+          <div className="book-text-div">
+            <h2 className="selected-title">{title}</h2>
+            <p className="selected-author">Written by: {author}</p>
+            <p className="selected-description">{description}</p>
+            <p>Recommended by: {recommended_by}</p>
+          </div>
           <div className="button-container">
             {this.determineButton()}
             <a

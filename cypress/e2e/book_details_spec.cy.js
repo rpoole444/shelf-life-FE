@@ -40,7 +40,6 @@ describe('Book Club book details page user flow', () => {
         .get('.learn-more-btn').contains('Learn More').click()
         .get('.unfavorite-button').contains('Remove from Favorites')
     })
-    
   })
 
 
