@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import ErrorModal from "../ErrorHandle/ErrorModel";
 import BookContainer from "../BookContainer/BookContainer";
 import { apiCalls } from "../apiCalls";
-import ErrorModal from "../ErrorHandle/ErrorModel";
 import { cleanBookData } from "../utilities";
 
 class Favorites extends Component {
@@ -14,8 +14,7 @@ class Favorites extends Component {
   }
 
   componentDidMount = () => {
-    apiCalls
-      .getAllFavorites()
+    apiCalls.getAllFavorites()
       .then((booksData) => {
         const cleanedFavorites = booksData.map((book) => cleanBookData(book));
         this.setState({ favorites: cleanedFavorites });
@@ -24,16 +23,10 @@ class Favorites extends Component {
   };
 
   render() {
-    const errorModal = this.state.error ? (
-      <ErrorModal message={this.state.error} />
-    ) : null;
+    const errorModal = this.state.error ? <ErrorModal message={this.state.error} /> : null;
     return (
       <>
-        {!this.state.favorites.length && (
-          <h2 className="empty-favorites-msg">
-            You haven't added any favorites yet -- get to it!
-          </h2>
-        )}
+        {!this.state.favorites.length && <h2 className="empty-favorites-msg">You haven't added any favorites yet -- get to it!</h2>}
         <BookContainer allBooks={this.state.favorites} />
         {errorModal}
       </>
