@@ -60,7 +60,11 @@ We created a backend for this project to satisfy the requirements of our Stretch
 
 Scroll through the main page to view all books in the database. Each books's cover, title, Recommendation and author are visible.
 
-![gif of navigating](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTM0ZDFmMDFjNDI5MTliYjAzZGRkYzhmMzYwOGFkZDNmMzBkMTBhNyZjdD1n/mDUCJ86L3eDfcnup3Q/giphy.gif)
+[Short GIF of Artist Archive](
+
+https://user-images.githubusercontent.com/111818942/222980215-cf84212e-f0c8-407a-845d-b586e2b5633d.mp4
+
+)
 
 Click on the 'Learn More' button next to a book cover that interests you to view a book's details. On this page a description of the book's plot is presented. The user is also given the ability to add to or remove a book from their favorites as well as the option to buy the book on Amazon. They can view all of their favorited books by clicking the "Your favorites" button at the top right of the page. Click the book club logo at the top left of the page to return to the main page.
 
