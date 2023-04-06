@@ -63,7 +63,6 @@ Scroll through the main page to view all books in the database. Each books's cov
 Click on the 'Learn More' button next to a book cover that interests you to view a book's details. On this page a description of the book's plot is presented. The user is also given the ability to add to or remove a book from their favorites as well as the option to buy the book on Amazon. They can view all of their favorited books by clicking the "Your favorites" button at the top right of the page. Click the book club logo at the top left of the page to return to the main page.
 
 ![gif of navigating](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTRkZjg1ZTNiMTFjN2NmYWFmM2UxYTI1MTM5MjNmMzdiOWVlODA3ZCZjdD1n/yKym67WoKt3AIQ38UH/giphy.gif)
-![gif of GRant Guru](![Screen Recording - 6 April 2023](https://user-images.githubusercontent.com/111818942/230463892-75b499d4-e3a6-475a-b9df-89940440fc3e.gif)
 
 ## Code Architecture <a name="codeArchitecture"></a>
 
